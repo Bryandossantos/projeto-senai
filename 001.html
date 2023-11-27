@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="script.js">
+  <link rel="stylesheet" href="banco.php">
+<head>
+  <title>Formulário de Perguntas</title>
+
+<body>
+  <form action="#" method="post">
+    <div class="form-group">
+      <label for="filial">Filial:</label>
+      <input type="text" id="filial" name="filial" placeholder="Digite o nome da filial" required>
+    </div>
+
+    <div class="form-group">
+      <label for="gerente">Gerente:</label>
+      <input type="text" id="gerente" name="gerente" placeholder="Digite o nome do gerente" required>
+    </div>
+
+    <div class="form-group">
+      <label for="question1">Pergunta 1: A filial possui wi-fi?</label>
+      <select id="question1" name="question1" required>
+        <option value="">Selecione uma opcao</option>
+        <option value="sim">Sim</option>
+        <option value="não">Nao</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="question2">Pergunta 2: Quantos computadores completos tem na filial?</label>
+      <input type="number" id="question2" name="question2" required>
+    </div>
+
+    <div class="form-group">
+      <label for="question3">Pergunta 3: Quais perifericos faltam para os computadores?</label>
+      <input type="text" id="question3" name="question3" required>
+    </div>
+
+    <div class="form-group">
+      <label for="question4">Pergunta 4: Todos os computadores possuem uma configuracao igual ou superior a essas?</label>
+      <p>Core i5 de 6 geracao, 4GB de RAM</p>
+      <select id="question4" name="question4" required>
+        <option value="">Selecione uma opcao</option>
+        <option value="sim">Sim</option>
+        <option value="não">Nao</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="question5">Pergunta 5: Se a resposta a pergunta anterior for nao, quantos possuem essa configuracao?</label>
+      <input type="number" id="question5" name="question5" required>
+    </div>
+
+    <div class="dropdown">
+      <label for="opcao">Selecione as pecas que estao faltando para os computadores:</label>
+      <button class="dropdown-button" id="dropdown-button" onclick="toggleOptions('options', 'numeric-input')">Selecione uma opcao</button>
+      <div class="options" id="options">
+        <button onclick="selectOption(1, 'dropdown-button', 'numeric-input')">Tela</button>
+        <button onclick="selectOption(2, 'dropdown-button', 'numeric-input')">Teclado</button>
+        <button onclick="selectOption(3, 'dropdown-button', 'numeric-input')">Processador i5 de 6 gen</button>
+        <button onclick="selectOption(4, 'dropdown-button', 'numeric-input')">Memoria RAM 4GB</button>
+      </div>
+      <div class="numeric-input" id="numeric-input">
+        <label for="numeric-value">Insira um valor numerico:</label>
+        <input type="number" id="numeric-value">
+        <button onclick="addSelectedOption('selected-list-computador', 'dropdown-button', 'numeric-input', 'numeric-value')">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="question6">Pergunta 6: Os colaboradores possuem habilidade ou conhecimento com o sistema e computadores?</label>
+      <select id="question6" name="question6" required>
+        <option value="">Selecione uma opcao</option>
+        <option value="sim">Sim</option>
+        <option value="não">Nao</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="question7">Pergunta 7: Caso a resposta a pergunta 6 seja afirmativa, os colaboradores possuem disponibilidade para receber treinamento?</label>
+      <select id="question7" name="question7" required>
+        <option value="">Selecione uma opcao</option>
+        <option value="sim">Sim</option>
+        <option value="não">Nao</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="question8">Pergunta 8: Quantos colaboradores irao receber treinamento?</label>
+      <input type="number" id="question8" name="question8" required>
+    </div>
+
+    <div class="form-group">
+      <label for="question9">Pergunta 9: A filial esta com o servidor completo e funcional?</label>
+      <select id="question9" name="question9" required>
+        <option value="">Selecione uma opcao</option>
+        <option value="sim">Sim</option>
+        <option value="não">Nao</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="question10">Pergunta 10: Se a resposta anterior for negativa qual seria o problema? Se for falta de peças por favor escreva as que estao faltando usando a lista de opcoes enviadas em anexo</label>
+      <input type="text" id="question10" name="question10" required>
+    </div>
+    
+    <input type="submit" value="Enviar Respostas">
+  </form>
+</body>
+
+</html>
