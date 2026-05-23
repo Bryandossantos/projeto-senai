@@ -1,112 +1,264 @@
 <!DOCTYPE html>
-<html>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="script.js">
-  <link rel="stylesheet" href="banco.php">
+<html lang="pt-br">
+
 <head>
-  <title>Formulário de Perguntas</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Levantamento de Infraestrutura TI</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Ícones -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
 
 <body>
-  <form action="#" method="post">
-    <div class="form-group">
-      <label for="filial">Filial:</label>
-      <input type="text" id="filial" name="filial" placeholder="Digite o nome da filial" required>
+
+  <!-- MENU LATERAL -->
+  <aside class="sidebar">
+    <div class="logo">
+      <i class="fa-solid fa-building"></i>
+      <h2>TI Corporativo</h2>
     </div>
 
-    <div class="form-group">
-      <label for="gerente">Gerente:</label>
-      <input type="text" id="gerente" name="gerente" placeholder="Digite o nome do gerente" required>
-    </div>
+    <nav>
+      <ul>
+        <li class="active">
+          <i class="fa-solid fa-clipboard-list"></i>
+          Formulário
+        </li>
 
-    <div class="form-group">
-      <label for="question1">Pergunta 1: A filial possui wi-fi?</label>
-      <select id="question1" name="question1" required>
-        <option value="">Selecione uma opcao</option>
-        <option value="sim">Sim</option>
-        <option value="não">Nao</option>
-      </select>
-    </div>
+        <li>
+          <i class="fa-solid fa-computer"></i>
+          Equipamentos
+        </li>
 
-    <div class="form-group">
-      <label for="question2">Pergunta 2: Quantos computadores completos tem na filial?</label>
-      <input type="number" id="question2" name="question2" required>
-    </div>
+        <li>
+          <i class="fa-solid fa-network-wired"></i>
+          Rede
+        </li>
 
-    <div class="form-group">
-      <label for="question3">Pergunta 3: Quais perifericos faltam para os computadores?</label>
-      <input type="text" id="question3" name="question3" required>
-    </div>
+        <li>
+          <i class="fa-solid fa-users"></i>
+          Colaboradores
+        </li>
 
-    <div class="form-group">
-      <label for="question4">Pergunta 4: Todos os computadores possuem uma configuracao igual ou superior a essas?</label>
-      <p>Core i5 de 6 geracao, 4GB de RAM</p>
-      <select id="question4" name="question4" required>
-        <option value="">Selecione uma opcao</option>
-        <option value="sim">Sim</option>
-        <option value="não">Nao</option>
-      </select>
-    </div>
+        <li>
+          <i class="fa-solid fa-server"></i>
+          Servidores
+        </li>
+      </ul>
+    </nav>
+  </aside>
 
-    <div class="form-group">
-      <label for="question5">Pergunta 5: Se a resposta a pergunta anterior for nao, quantos possuem essa configuracao?</label>
-      <input type="number" id="question5" name="question5" required>
-    </div>
+  <!-- CONTEÚDO -->
+  <main class="main-content">
 
-    <div class="dropdown">
-      <label for="opcao">Selecione as pecas que estao faltando para os computadores:</label>
-      <button class="dropdown-button" id="dropdown-button" onclick="toggleOptions('options', 'numeric-input')">Selecione uma opcao</button>
-      <div class="options" id="options">
-        <button onclick="selectOption(1, 'dropdown-button', 'numeric-input')">Tela</button>
-        <button onclick="selectOption(2, 'dropdown-button', 'numeric-input')">Teclado</button>
-        <button onclick="selectOption(3, 'dropdown-button', 'numeric-input')">Processador i5 de 6 gen</button>
-        <button onclick="selectOption(4, 'dropdown-button', 'numeric-input')">Memoria RAM 4GB</button>
+    <!-- TOPO -->
+    <header class="topbar">
+      <div>
+        <h1>Levantamento de Infraestrutura</h1>
+        <p>Preencha todas as informações da filial</p>
       </div>
-      <div class="numeric-input" id="numeric-input">
-        <label for="numeric-value">Insira um valor numerico:</label>
-        <input type="number" id="numeric-value">
-        <button onclick="addSelectedOption('selected-list-computador', 'dropdown-button', 'numeric-input', 'numeric-value')">Adicionar</button>
+
+      <div class="user-area">
+        <i class="fa-solid fa-user-tie"></i>
+        <span>Administrador</span>
       </div>
-    </div>
+    </header>
 
-    <div class="form-group">
-      <label for="question6">Pergunta 6: Os colaboradores possuem habilidade ou conhecimento com o sistema e computadores?</label>
-      <select id="question6" name="question6" required>
-        <option value="">Selecione uma opcao</option>
-        <option value="sim">Sim</option>
-        <option value="não">Nao</option>
-      </select>
-    </div>
+    <!-- FORMULÁRIO -->
+    <section class="form-container">
 
-    <div class="form-group">
-      <label for="question7">Pergunta 7: Caso a resposta a pergunta 6 seja afirmativa, os colaboradores possuem disponibilidade para receber treinamento?</label>
-      <select id="question7" name="question7" required>
-        <option value="">Selecione uma opcao</option>
-        <option value="sim">Sim</option>
-        <option value="não">Nao</option>
-      </select>
-    </div>
+      <form action="#" method="post">
 
-    <div class="form-group">
-      <label for="question8">Pergunta 8: Quantos colaboradores irao receber treinamento?</label>
-      <input type="number" id="question8" name="question8" required>
-    </div>
+        <!-- DADOS DA FILIAL -->
+        <div class="section-title">
+          <i class="fa-solid fa-building"></i>
+          <h2>Dados da Filial</h2>
+        </div>
 
-    <div class="form-group">
-      <label for="question9">Pergunta 9: A filial esta com o servidor completo e funcional?</label>
-      <select id="question9" name="question9" required>
-        <option value="">Selecione uma opcao</option>
-        <option value="sim">Sim</option>
-        <option value="não">Nao</option>
-      </select>
-    </div>
+        <div class="grid">
+          <div class="form-group">
+            <label>Filial</label>
+            <input type="text" name="filial" placeholder="Digite o nome da filial" required>
+          </div>
 
-    <div class="form-group">
-      <label for="question10">Pergunta 10: Se a resposta anterior for negativa qual seria o problema? Se for falta de peças por favor escreva as que estao faltando usando a lista de opcoes enviadas em anexo</label>
-      <input type="text" id="question10" name="question10" required>
-    </div>
-    
-    <input type="submit" value="Enviar Respostas">
-  </form>
+          <div class="form-group">
+            <label>Gerente Responsável</label>
+            <input type="text" name="gerente" placeholder="Digite o nome do gerente" required>
+          </div>
+        </div>
+
+        <!-- REDE -->
+        <div class="section-title">
+          <i class="fa-solid fa-wifi"></i>
+          <h2>Infraestrutura de Rede</h2>
+        </div>
+
+        <div class="form-group">
+          <label>A filial possui Wi-Fi?</label>
+
+          <select name="question1" required>
+            <option value="">Selecione</option>
+            <option>Sim</option>
+            <option>Não</option>
+          </select>
+        </div>
+
+        <!-- COMPUTADORES -->
+        <div class="section-title">
+          <i class="fa-solid fa-computer"></i>
+          <h2>Computadores</h2>
+        </div>
+
+        <div class="grid">
+          <div class="form-group">
+            <label>Quantidade de computadores completos</label>
+            <input type="number" name="question2" required>
+          </div>
+
+          <div class="form-group">
+            <label>Periféricos faltando</label>
+            <input type="text" name="question3"
+              placeholder="Ex: mouse, monitor, teclado">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>
+            Todos os computadores possuem configuração mínima?
+          </label>
+
+          <div class="info-box">
+            Core i5 6ª geração • 4GB RAM
+          </div>
+
+          <select name="question4" required>
+            <option value="">Selecione</option>
+            <option>Sim</option>
+            <option>Não</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>
+            Quantos computadores possuem essa configuração?
+          </label>
+
+          <input type="number" name="question5">
+        </div>
+
+        <!-- PEÇAS -->
+        <div class="section-title">
+          <i class="fa-solid fa-microchip"></i>
+          <h2>Peças Faltando</h2>
+        </div>
+
+        <div class="grid">
+
+          <div class="checkbox-card">
+            <input type="checkbox" id="tela">
+            <label for="tela">Tela</label>
+          </div>
+
+          <div class="checkbox-card">
+            <input type="checkbox" id="teclado">
+            <label for="teclado">Teclado</label>
+          </div>
+
+          <div class="checkbox-card">
+            <input type="checkbox" id="processador">
+            <label for="processador">Processador i5</label>
+          </div>
+
+          <div class="checkbox-card">
+            <input type="checkbox" id="ram">
+            <label for="ram">Memória RAM 4GB</label>
+          </div>
+
+        </div>
+
+        <!-- COLABORADORES -->
+        <div class="section-title">
+          <i class="fa-solid fa-users"></i>
+          <h2>Colaboradores</h2>
+        </div>
+
+        <div class="form-group">
+          <label>
+            Os colaboradores possuem conhecimento em informática?
+          </label>
+
+          <select name="question6" required>
+            <option value="">Selecione</option>
+            <option>Sim</option>
+            <option>Não</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>
+            Existe disponibilidade para treinamento?
+          </label>
+
+          <select name="question7" required>
+            <option value="">Selecione</option>
+            <option>Sim</option>
+            <option>Não</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>
+            Quantos colaboradores irão receber treinamento?
+          </label>
+
+          <input type="number" name="question8">
+        </div>
+
+        <!-- SERVIDOR -->
+        <div class="section-title">
+          <i class="fa-solid fa-server"></i>
+          <h2>Servidor</h2>
+        </div>
+
+        <div class="form-group">
+          <label>
+            O servidor está completo e funcional?
+          </label>
+
+          <select name="question9" required>
+            <option value="">Selecione</option>
+            <option>Sim</option>
+            <option>Não</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>
+            Caso exista algum problema, descreva abaixo:
+          </label>
+
+          <textarea rows="5" name="question10"
+            placeholder="Descreva o problema encontrado..."></textarea>
+        </div>
+
+        <!-- BOTÃO -->
+        <button type="submit" class="submit-btn">
+          <i class="fa-solid fa-paper-plane"></i>
+          Enviar Levantamento
+        </button>
+
+      </form>
+
+    </section>
+
+  </main>
+
 </body>
 
 </html>
